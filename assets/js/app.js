@@ -1178,10 +1178,12 @@ toPdf.init();
 var toPrint = function () {
     var init = function init() {
         var btn = getElement('.toprint-btn');
-        btn.addEventListener('click', function (e) {
+		if (btn) {
+			btn.addEventListener('click', function (e) {
             e.preventDefault();
             window.print();
         });
+		}
     };
 
     return {
